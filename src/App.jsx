@@ -1,26 +1,3 @@
-// import React from 'react'
-// // import Sidebar from './components/Sidebar'
-// // import Header from './components/Header'
-// // import MainContent from './components/MainContents'
-// import ArenaDashboard from './Pages/ArenaDashbord'
-
-
-
-
-
-// function App() {
-//   return (
-//     <div className='bg-gray-700 text-xl text-white'>
-// {/*       
-//       <Sidebar />
-//       <Header />
-//       <MainContent /> */}
-//       <ArenaDashboard />
-//     </div>
-//   )
-// }
-
-// export default App
 
 
 
@@ -58,7 +35,7 @@ const data = [
     line: 1.5,
     actual: 3,
     matchup: "BUF vs JAX",
-    gameStatus: "In-Progress",
+    gameStatus: "Final",
     report: false,
     metrics: "22 44%",
     uniqueId: "ltkm-wq8z-dpxr-viyc-nb3e-7cwl",
@@ -88,7 +65,8 @@ return (
     {/* Content below header */}
     <div className="flex flex-1">
       <Sidebar />
-      <main className="flex-1 p-6 overflow-auto">
+      <main className="flex-1 p-6 overflow-auto bg-gray-100">
+
         <FilterBoxes />
         <Table data={data} />
         <Pagination />
