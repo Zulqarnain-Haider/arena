@@ -203,7 +203,7 @@ function Sidebar() {
       {/* Picks Button */}
       <button
         onClick={() => setShowPicksDropdown(!showPicksDropdown)}
-        className="w-full flex items-center cursor-pointer justify-between bg-white shadow-sm border border-gray-300 rounded-lg px-4 py-3 text-sm font-medium text-gray-700 mb-4 hover:bg-gray-50 transition"
+        className="w-full flex items-center cursor-pointer justify-between bg-white shadow-sm border border-gray-300 rounded-lg px-4 py-3 text-sm font-medium text-black mb-4 hover:bg-gray-50 transition"
       >
         <span className="flex items-center  gap-2">
           <img src={image} alt="Materials Icon" className="w-5  h-5" />
@@ -221,7 +221,7 @@ function Sidebar() {
           {picksDropdownItems.map((item) => (
             <div
               key={item}
-              className="cursor-pointer text-sm px-3 py-1 rounded text-gray-700 hover:bg-blue-900 hover:text-white transition"
+              className="cursor-pointer text-sm px-3 py-1 rounded text-black hover:bg-blue-700 hover:text-white transition"
             >
               {item}
             </div>
@@ -237,7 +237,7 @@ function Sidebar() {
 
               {/* Section Title */}
               <div
-                className="flex justify-between bg-gray-100 items-center cursor-pointer px-2 py-1 text-xs font-bold text-gray-700 uppercase tracking-wide rounded"
+                className="flex justify-between bg-gray-100 items-center cursor-pointer px-2 py-1 text-xs font-bold text-black uppercase tracking-wide rounded"
                 onClick={() =>
                   setActiveMenu(activeMenu === section ? null : section)
                 }
@@ -260,8 +260,8 @@ function Sidebar() {
                       onClick={() => setActiveItem(item)}
                       className={`cursor-pointer text-sm px-3 py-1 rounded ${
                         activeItem === item
-                          ? "bg-blue-900 text-white"
-                          : "text-gray-700 hover:bg-blue-900 hover:text-white"
+                          ? "bg-blue-700 text-white"
+                          : "text-black hover:bg-blue-700 hover:text-white"
                       } transition`}
                     >
                       {item}

@@ -172,7 +172,7 @@ import React from "react";
 import { FaFire, FaEllipsisV, FaChevronDown } from "react-icons/fa";
 
 export default function Table({ data = [] }) {
-  const repeatedData = Array.from({ length: 20 }, (_, i) => data[i % data.length]);
+  const repeatedData = Array.from({ length: 19 }, (_, i) => data[i % data.length]);
 
   return (
     <div className="w-full overflow-x-auto bg-transparent">
@@ -184,8 +184,8 @@ export default function Table({ data = [] }) {
             <input type="checkbox" readOnly className="w-5 h-5 rounded border border-gray-300 accent-indigo-500" />
           </label>
 
-          <button type="button" className="p-2 rounded-md hover:bg-gray-100 transition">
-            <FaChevronDown className="w-4 h-4 text-black" />
+          <button type="button" className="p-2 rounded-md  transition">
+            <FaChevronDown className="w-5 h-5 text-black" />
           </button>
 
           <div className="flex flex-wrap items-center gap-2 mt-2 sm:mt-0">
@@ -231,16 +231,16 @@ export default function Table({ data = [] }) {
               const isActive = groupIndex % 2 === 0;
 
               return (
-                <tr key={`${row.uniqueId ?? idx}-${idx}`} className="hover:bg-gray-100 transition-colors">
+                <tr key={`${row.uniqueId ?? idx}-${idx}`} className=" transition-colors">
 
                   {/* Checkbox */}
                   <td className="text-center px-1 py-1">
-                    <input type="checkbox" readOnly className="w-4 h-4 rounded accent-indigo-500" />
+                    <input type="checkbox" readOnly className="w-5 h-5 rounded accent-indigo-500" />
                   </td>
 
                   {/* Post */}
                   <td className="text-center px-1 py-1">
-                    <input type="checkbox" readOnly className="w-4 h-4 rounded accent-indigo-500" />
+                    <input type="checkbox" readOnly className="w-5 h-5 rounded accent-indigo-500" />
                   </td>
 
                   {/* Trend */}
@@ -306,7 +306,7 @@ export default function Table({ data = [] }) {
     <input 
       type="checkbox" 
       readOnly 
-      className="w-4 h-4 rounded accent-indigo-500 cursor-pointer peer" 
+      className="w-5   h-5 rounded accent-indigo-500 cursor-pointer peer" 
     />
     {/* CSS se show/hide - Right side pe */}
     <span className="absolute left-full ml-1 top-1/2 -translate-y-1/2  text-black text-xs px-2 py-1 rounded-md opacity-0 peer-checked:opacity-100 transition-opacity duration-300 pointer-events-none z-10 whitespace-nowrap">
@@ -337,3 +337,176 @@ export default function Table({ data = [] }) {
     </div>
   );
 }
+
+
+
+
+
+
+
+
+// import React from "react";
+// import { FaFire, FaEllipsisV, FaChevronDown } from "react-icons/fa";
+
+// export default function Table({ data = [] }) {
+//   const repeatedData = Array.from({ length: 20 }, (_, i) => data[i % data.length]);
+
+//   return (
+//     <div className="w-full bg-transparent">
+
+//       <div className="min-w-full bg-white rounded-lg shadow-md p-4">
+
+//         {/* TOOLBAR — stays fixed, does NOT scroll */}
+//         <div className="flex flex-wrap items-center gap-2 mb-4">
+//           <label className="inline-flex items-center gap-2 cursor-pointer select-none">
+//             <input type="checkbox" readOnly className="w-5 h-5 rounded border border-gray-300 accent-indigo-500" />
+//           </label>
+
+//           <button type="button" className="p-2 rounded-md hover:bg-gray-100 transition">
+//             <FaChevronDown className="w-5 h-5 text-black" />
+//           </button>
+
+//           <div className="flex flex-wrap items-center gap-2 mt-2 sm:mt-0">
+//             <button className="px-3 py-1 text-sm rounded-md bg-gray-500 hover:bg-gray-600 text-white transition">
+//               Post
+//             </button>
+//             <button className="px-3 py-1 text-sm rounded-md border bg-gray-500 hover:bg-gray-600 text-white transition">
+//               Unpost
+//             </button>
+//             <button className="px-3 py-1 text-sm rounded-md bg-gray-500 hover:bg-gray-600 text-white transition">
+//               Apply Trending
+//             </button>
+//             <button className="px-3 py-1 text-sm rounded-md border bg-gray-500 hover:bg-gray-600 text-white transition">
+//               Remove Trending
+//             </button>
+//           </div>
+//         </div>
+
+//         {/* ===== TABLE SCROLL WRAPPER (ONLY TABLE SCROLLS) ===== */}
+//         <div className="max-h-[550px] overflow-y-auto overflow-x-auto">
+
+//           <table className="min-w-full table-auto text-sm">
+            
+//             {/* Sticky Table Header */}
+//             <thead className="sticky top-0 bg-white z-10 shadow-sm">
+//               <tr>
+//                 <th className="text-center px-2 py-1">A</th>
+//                 <th className="text-center px-2 py-1">Post</th>
+//                 <th className="text-center px-2 py-1">Trend</th>
+//                 <th className="text-center px-2 py-1">Cal</th>
+//                 <th className="text-left  px-2 py-1">Player</th>
+//                 <th className="text-center px-2 py-1">Prop Type</th>
+//                 <th className="text-center px-2 py-1">Line</th>
+//                 <th className="text-center px-2 py-1">Actual</th>
+//                 <th className="text-center px-2 py-1">Matchup</th>
+//                 <th className="text-center px-1 py-1">Game Status</th>
+//                 <th className="text-center px-4 py-1">Report</th>
+//                 <th className="text-center px-2 py-1">Metrics</th>
+//                 <th className="text-left  px-2 py-1">Unique ID</th>
+//                 <th className="text-center px-2 py-1">Actions</th>
+//               </tr>
+//             </thead>
+
+//             <tbody>
+//               {repeatedData.map((row, idx) => (
+//                 <tr key={`${row.uniqueId ?? idx}-${idx}`} className="hover:bg-gray-100 transition-colors">
+
+//                   {/* Checkbox */}
+//                   <td className="text-center px-1 py-1">
+//                     <input type="checkbox" readOnly className="w-5 h-5 rounded accent-indigo-500" />
+//                   </td>
+
+//                   {/* Post */}
+//                   <td className="text-center px-1 py-1">
+//                     <input type="checkbox" readOnly className="w-5 h-5 rounded accent-indigo-500" />
+//                   </td>
+
+//                   {/* Trend Button */}
+//                   <td className="text-center px-1 py-1 flex justify-center">
+//                     <button
+//                       className={`w-6 h-6 flex items-center justify-center rounded border transition ${
+//                         row.trend === "trending"
+//                           ? "border-gray-900 bg-black text-red-500"
+//                           : "border-gray-200 bg-transparent text-gray-400"
+//                       }`}
+//                     >
+//                       <FaFire className="w-4 h-4" />
+//                     </button>
+//                   </td>
+
+//                   {/* Cal */}
+//                   <td className="text-center px-1 py-1">{row.cal}</td>
+
+//                   {/* Player + sub text */}
+//                   <td className="px-1 py-1">
+//                     <div className="flex flex-col">
+//                       <span className="text-black font-medium">{row.player}</span>
+//                       {row.sub && <span className="text-xs text-gray-600">{row.sub}</span>}
+//                     </div>
+//                   </td>
+
+//                   {/* Prop Type */}
+//                   <td className="text-center px-1 py-1">{row.propType}</td>
+
+//                   {/* Line */}
+//                   <td className="text-center px-1 py-1">{row.line}</td>
+
+//                   {/* Actual */}
+//                   <td className="text-center px-1 py-1">{row.actual}</td>
+
+//                   {/* Matchup */}
+//                   <td className="text-center px-1 py-1">{row.matchup}</td>
+
+//                   {/* Game Status (Green for first 7 rows) */}
+//                   <td className="text-center px-1 py-1">
+//                     <div className="flex items-center justify-center gap-2">
+//                       {idx < 7 ? (
+//                         <>
+//                           <span className="w-2 h-2 bg-green-400 rounded-full inline-block"></span>
+//                           <span>In Progress</span>
+//                         </>
+//                       ) : (
+//                         <span>Final</span>
+//                       )}
+//                     </div>
+//                   </td>
+
+//                   {/* Report Checkbox + label on check */}
+//                   <td className="text-center px-1 py-1">
+//                     <div className="relative inline-block group">
+//                       <input 
+//                         type="checkbox" 
+//                         readOnly 
+//                         className="w-5 h-5 rounded accent-indigo-500 cursor-pointer peer" 
+//                       />
+//                       <span className="absolute left-full ml-1 top-1/2 -translate-y-1/2 text-black text-xs px-2 py-1 rounded-md opacity-0 peer-checked:opacity-100 transition-opacity duration-300 pointer-events-none z-10 whitespace-nowrap">
+//                         Rescue
+//                       </span>
+//                     </div>
+//                   </td>
+
+//                   {/* Metrics */}
+//                   <td className="text-center px-1 py-1 text-xs">{row.metrics}</td>
+
+//                   {/* Unique ID */}
+//                   <td className="px-1 py-1">{row.uniqueId}</td>
+
+//                   {/* Actions */}
+//                   <td className="text-center px-1 py-1">
+//                     <button className="p-1 rounded-md hover:bg-gray-200 transition">
+//                       <FaEllipsisV className="w-4 h-4" />
+//                     </button>
+//                   </td>
+
+//                 </tr>
+//               ))}
+//             </tbody>
+//           </table>
+
+//         </div>
+//         {/* ===== END SCROLL WRAPPER ===== */}
+
+//       </div>
+//     </div>
+//   );
+// }

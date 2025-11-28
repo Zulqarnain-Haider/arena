@@ -260,13 +260,13 @@ export default function FilterBoxes() {
         {/* Left Side Filters */}
         <div className="flex flex-wrap items-center gap-0 w-full lg:w-auto">
           {/* NFL Dropdown */}
-          <div className="relative dropdown-container flex-1 lg:flex-none min-w-[120px] lg:min-w-[110px]">
+          <div className="relative dropdown-container flex-1 lg:flex-none min-w-[128px] lg:min-w-[110px]">
             <div 
               className="flex items-center gap-2 border border-gray-300 bg-white rounded-l-lg lg:rounded-l-lg px-3 py-2 cursor-pointer w-full"
               onClick={() => handleDropdownClick('league')}
             >
-              <span className="text-gray-700 font-medium text-sm truncate">{selectedLeague}</span>
-              <FaChevronDown className="text-gray-400 ml-1 flex-shrink-0" />
+              <span className="text-black font-medium text-sm truncate">{selectedLeague}</span>
+              <FaChevronDown className="text-black ml-7 flex-shrink-0" />
             </div>
             {openDropdown === 'league' && (
               <div className="absolute top-full left-0 mt-1 w-full bg-white border border-gray-300 rounded-lg shadow-lg z-20">
@@ -284,13 +284,13 @@ export default function FilterBoxes() {
           </div>
 
           {/* All Props Dropdown */}
-          <div className="relative dropdown-container flex-1 lg:flex-none min-w-[120px] lg:min-w-[110px]">
+          {/* <div className="relative dropdown-container flex-1 lg:flex-none min-w-[120px] lg:min-w-[110px]">
             <div 
               className="flex items-center justify-between bg-white border-t border-b border-r border-gray-300 px-3 py-2 cursor-pointer w-full"
               onClick={() => handleDropdownClick('props')}
             >
-              <span className="text-gray-700 font-medium text-sm truncate">{selectedProps}</span>
-              <FaChevronDown className="text-gray-400 ml-1 flex-shrink-0" />
+              <span className="text-black font-medium text-sm truncate">{selectedProps}</span>
+              <FaChevronDown className="text-black ml-1 flex-shrink-0" />
             </div>
             {openDropdown === 'props' && (
               <div className="absolute top-full left-0 mt-1 w-full bg-white border border-gray-300 rounded-lg shadow-lg z-20">
@@ -305,16 +305,40 @@ export default function FilterBoxes() {
                 ))}
               </div>
             )}
-          </div>
+          </div> */}
+          <div className="relative dropdown-container flex-1 lg:flex-none min-w-[160px] lg:min-w-[240px]">
+  <div 
+    className="flex items-center justify-between bg-white border-t border-b border-r border-gray-300 px-3 py-2 cursor-pointer w-full"
+    onClick={() => handleDropdownClick('props')}
+  >
+    <span className="text-black font-medium text-sm truncate">{selectedProps}</span>
+    <FaChevronDown className="text-black ml-1 flex-shrink-0" />
+  </div>
+
+  {openDropdown === 'props' && (
+    <div className="absolute top-full left-0 mt-1 w-full bg-white border border-gray-300 rounded-lg shadow-lg z-20">
+      {props.map((prop) => (
+        <div
+          key={prop}
+          className="px-3 py-2 hover:bg-gray-100 cursor-pointer text-sm"
+          onClick={() => handleOptionClick(setSelectedProps, prop, 'props')}
+        >
+          {prop}
+        </div>
+      ))}
+    </div>
+  )}
+</div>
+
 
           {/* Not started Dropdown */}
-          <div className="relative dropdown-container flex-1 lg:flex-none min-w-[120px] lg:min-w-[110px]">
+          <div className="relative dropdown-container flex-1 lg:flex-none min-w-[120px] lg:min-w-[140px]">
             <div 
               className="flex items-center justify-between bg-white border-t border-b border-r border-gray-300 px-3 py-2 cursor-pointer w-full"
               onClick={() => handleDropdownClick('status')}
             >
-              <span className="text-gray-700 font-medium text-sm truncate">{selectedStatus}</span>
-              <FaChevronDown className="text-gray-400 ml-1 flex-shrink-0" />
+              <span className="text-black font-medium text-sm truncate">{selectedStatus}</span>
+              <FaChevronDown className="text-black ml-1 flex-shrink-0" />
             </div>
             {openDropdown === 'status' && (
               <div className="absolute top-full left-0 mt-1 w-full bg-white border border-gray-300 rounded-lg shadow-lg z-20">
@@ -332,13 +356,13 @@ export default function FilterBoxes() {
           </div>
 
           {/* Post: All Dropdown */}
-          <div className="relative dropdown-container flex-1 lg:flex-none min-w-[120px] lg:min-w-[110px]">
+          <div className="relative dropdown-container flex-1 lg:flex-none min-w-[120px] lg:min-w-[140px]">
             <div 
               className="flex items-center justify-between bg-white border-t border-b border-r border-gray-300 px-3 py-2 cursor-pointer w-full"
               onClick={() => handleDropdownClick('post')}
             >
-              <span className="text-gray-700 font-medium text-sm truncate">{selectedPost}</span>
-              <FaChevronDown className="text-gray-400 ml-1 flex-shrink-0" />
+              <span className="text-black font-medium text-sm truncate">{selectedPost}</span>
+              <FaChevronDown className="text-black ml-1 flex-shrink-0" />
             </div>
             {openDropdown === 'post' && (
               <div className="absolute top-full left-0 mt-1 w-full bg-white border border-gray-300 rounded-lg shadow-lg z-20">
@@ -356,13 +380,13 @@ export default function FilterBoxes() {
           </div>
 
           {/* Trend: All Dropdown */}
-          <div className="relative dropdown-container flex-1 lg:flex-none min-w-[120px] lg:min-w-[110px]">
+          <div className="relative dropdown-container flex-1 lg:flex-none min-w-[120px] lg:min-w-[140px]">
             <div 
               className="flex items-center justify-between bg-white border border-gray-300 rounded-r-lg lg:rounded-r-lg px-3 py-2 cursor-pointer w-full"
               onClick={() => handleDropdownClick('trend')}
             >
-              <span className="text-gray-700 font-medium text-sm truncate">{selectedTrend}</span>
-              <FaChevronDown className="text-gray-400 ml-1 flex-shrink-0" />
+              <span className="text-black font-medium text-sm truncate">{selectedTrend}</span>
+              <FaChevronDown className="text-black ml-1 flex-shrink-0" />
             </div>
             {openDropdown === 'trend' && (
               <div className="absolute top-full left-0 mt-1 w-full bg-white border border-gray-300 rounded-lg shadow-lg z-20">
@@ -381,15 +405,15 @@ export default function FilterBoxes() {
         </div>
 
         {/* Right Side Filters - Players Dropdown and Search */}
-        <div className="flex flex-col sm:flex-row items-start sm:items-center  w-full lg:w-auto lg:ml-auto mt-3 lg:mt-0">
+        <div className="flex flex-col sm:flex-row items-start  sm:items-center  w-full lg:w-auto lg:ml-auto mt-3 lg:mt-0">
           {/* Players Dropdown */}
-          <div className="relative dropdown-container w-full sm:w-auto min-w-[120px]">
+          <div className="relative dropdown-container w-full sm:w-auto min-w-[140px]">
             <div 
               className="flex items-center justify-between bg-white border border-gray-300 rounded-lg px-3 py-2 cursor-pointer w-full"
               onClick={() => handleDropdownClick('players')}
             >
-              <span className="text-gray-700 font-medium text-sm truncate">{selectedPlayers}</span>
-              <FaChevronDown className="text-gray-400 ml-1 flex-shrink-0" />
+              <span className="text-black font-medium text-sm truncate">{selectedPlayers}</span>
+              <FaChevronDown className="text-black ml-1 flex-shrink-0" />
             </div>
             {openDropdown === 'players' && (
               <div className="absolute top-full left-0 mt-1 w-full bg-white border border-gray-300 rounded-lg shadow-lg z-20">
@@ -407,32 +431,34 @@ export default function FilterBoxes() {
           </div>
 
           {/* Search Player Input with Icon */}
+          
           <div className="relative bg-white w-full sm:w-auto">
-            <FaSearch className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
-            <input
-              type="text"
-              placeholder="Search Player"
-              className="border border-gray-300 rounded-lg pl-10 pr-3 py-1.5 shadow-sm outline-none focus:ring-1 focus:ring-blue-400 w-full sm:w-[220px]"
-            />
-          </div>
+  <FaSearch className="absolute left-3 top-1/2 -translate-y-1/2 text-black" />
+  <input
+    type="text"
+    placeholder="Search Player"
+    className="border border-gray-300 rounded-lg pl-10 pr-3 py-1.5 shadow-sm outline-none w-full sm:w-[300px]"
+  />
+</div>
+
         </div>
       </div>
 
       {/* Selected Filters Display for Mobile */}
       <div className="lg:hidden flex flex-wrap gap-2 mt-2">
-        <span className="text-xs text-gray-600 bg-gray-100 px-2 py-1 rounded">
+        <span className="text-xs text-black bg-gray-100 px-2 py-1 rounded">
           {selectedLeague}
         </span>
-        <span className="text-xs text-gray-600 bg-gray-100 px-2 py-1 rounded">
+        <span className="text-xs text-black bg-gray-100 px-2 py-1 rounded">
           {selectedProps}
         </span>
-        <span className="text-xs text-gray-600 bg-gray-100 px-2 py-1 rounded">
+        <span className="text-xs text-black bg-gray-100 px-2 py-1 rounded">
           {selectedStatus}
         </span>
-        <span className="text-xs text-gray-600 bg-gray-100 px-2 py-1 rounded">
+        <span className="text-xs text-black bg-gray-100 px-2 py-1 rounded">
           {selectedPost}
         </span>
-        <span className="text-xs text-gray-600 bg-gray-100 px-2 py-1 rounded">
+        <span className="text-xs text-black bg-gray-100 px-2 py-1 rounded">
           {selectedTrend}
         </span>
       </div>
