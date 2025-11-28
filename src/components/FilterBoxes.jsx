@@ -445,7 +445,7 @@ export default function FilterBoxes() {
       </div>
 
       {/* Selected Filters Display for Mobile */}
-      <div className="lg:hidden flex flex-wrap gap-2 mt-2">
+      {/* <div className="lg:hidden flex flex-wrap gap-2 mt-2">
         <span className="text-xs text-black bg-gray-100 px-2 py-1 rounded">
           {selectedLeague}
         </span>
@@ -461,7 +461,7 @@ export default function FilterBoxes() {
         <span className="text-xs text-black bg-gray-100 px-2 py-1 rounded">
           {selectedTrend}
         </span>
-      </div>
+      </div> */}
     </div>
   );
 }
